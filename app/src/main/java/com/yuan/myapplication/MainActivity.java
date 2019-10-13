@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     @Override
     public void onTabChanged(String tabId) {
-        ToastUtil.showToast(this, tabId);
+//        ToastUtil.showToast(this, tabId);
         //重置tab样式
         for (int i = 0; i < tabItemList.size(); i++) {
             TabItem tabItem = tabItemList.get(i);

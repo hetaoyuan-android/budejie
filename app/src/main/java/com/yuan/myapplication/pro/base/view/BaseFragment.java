@@ -18,7 +18,8 @@ public abstract class BaseFragment<P extends MvpBasePresenter> extends MvpFragme
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (viewContent == null) {
             viewContent = inflater.inflate(getContentView(),container, false);
-            initCOntentView(viewContent);
+            initContentView(viewContent);
+            initData();
         }
 
         //判断fragment对应的activity是否存在这个试图
@@ -35,5 +36,8 @@ public abstract class BaseFragment<P extends MvpBasePresenter> extends MvpFragme
     }
 
     public abstract int getContentView();
-    public abstract void initCOntentView(View viewContent);
+    public abstract void initContentView(View viewContent);
+
+
+    public void initData(){};
 }

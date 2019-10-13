@@ -13,7 +13,7 @@ public class PublishFragment extends BaseFragment {
     }
 
     @Override
-    public void initCOntentView(View viewContent) {
+    public void initContentView(View viewContent) {
 
     }
 
