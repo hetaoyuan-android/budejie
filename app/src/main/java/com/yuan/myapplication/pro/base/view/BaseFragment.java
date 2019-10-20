@@ -1,8 +1,6 @@
 package com.yuan.myapplication.pro.base.view;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,24 +8,35 @@ import android.view.ViewGroup;
 import com.yuan.myapplication.mvp.presenter.impl.MvpBasePresenter;
 import com.yuan.myapplication.mvp.view.impl.MvpFragment;
 
+
 public abstract class BaseFragment<P extends MvpBasePresenter> extends MvpFragment<P> {
-    //fragment需要缓存视图
-    private View viewContent; // 缓存视图
-    @Nullable
+    //我们自己的Fragment需要缓存视图
+    private View viewContent;//缓存视图
+    private boolean isInit;
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (viewContent == null) {
-            viewContent = inflater.inflate(getContentView(),container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (viewContent == null){
+            viewContent = inflater.inflate(getContentView(),container,false);
             initContentView(viewContent);
-            initData();
         }
 
-        //判断fragment对应的activity是否存在这个试图
+        //判断Fragment对应的Activity是否存在这个视图
         ViewGroup parent = (ViewGroup) viewContent.getParent();
-        if (parent != null) {
+        if (parent != null){
+            //如果存在,那么我就干掉,重写添加,这样的方式我们就可以缓存视图
             parent.removeView(viewContent);
         }
         return viewContent;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (!isInit){
+            this.isInit = true;
+            initData();
+        }
     }
 
     @Override
@@ -35,9 +44,13 @@ public abstract class BaseFragment<P extends MvpBasePresenter> extends MvpFragme
         return null;
     }
 
+
     public abstract int getContentView();
+
+    public void initData(){
+
+    }
+
     public abstract void initContentView(View viewContent);
 
-
-    public void initData(){};
 }

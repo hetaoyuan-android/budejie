@@ -9,7 +9,7 @@ import com.yuan.myapplication.pro.base.view.navigation.NavigationBuilderAdapter;
 
 public class EssenceNavigationBuilder extends NavigationBuilderAdapter {
 
-    public EssenceNavigationBuilder(Context context) {
+    public EssenceNavigationBuilder(Context context){
         super(context);
     }
 
@@ -21,7 +21,8 @@ public class EssenceNavigationBuilder extends NavigationBuilderAdapter {
     @Override
     public void createAndBind(ViewGroup parent) {
         super.createAndBind(parent);
-        setImageViewStyle(R.id.iv_left, getLeftIconRes(), getLeftIconOnClickListener());
-        setImageViewStyle(R.id.iv_right, getRightIconRes(), getRightIconOnClickListener());
+        setImageViewStyle(R.id.iv_left,getLeftIconRes(),getLeftIconOnClickListener());
+        setImageViewStyle(R.id.iv_right,getRightIconRes(),getRightIconOnClickListener());
     }
+
 }

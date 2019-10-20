@@ -1,5 +1,6 @@
 package com.yuan.myapplication.pro.newspost.view;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -7,9 +8,6 @@ import com.yuan.myapplication.R;
 import com.yuan.myapplication.pro.base.view.BaseFragment;
 
 
-/**
- * Created by Dream on 16/5/27.
- */
 public class NewpostVedioFragment extends BaseFragment {
 
     private int mType = 0;
@@ -30,7 +28,9 @@ public class NewpostVedioFragment extends BaseFragment {
     @Override
     public void initContentView(View contentView) {
         TextView textView = (TextView)contentView.findViewById(R.id.tv_content);
-        textView.setText(this.mTitle);
+        if (!TextUtils.isEmpty(this.mTitle) && textView != null) {
+            textView.setText(this.mTitle);
+        }
     }
 
     @Override

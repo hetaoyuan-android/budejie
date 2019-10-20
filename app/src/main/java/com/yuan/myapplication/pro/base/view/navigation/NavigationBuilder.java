@@ -4,9 +4,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 构建ToolBar  builder设计模式
+ * 构建ToolBar---Builder设计模式
  */
 public interface NavigationBuilder {
+
     public NavigationBuilder setTitle(String title);
 
     public NavigationBuilder setTitle(int title);
@@ -22,4 +23,5 @@ public interface NavigationBuilder {
     public NavigationBuilder setRightIconOnClickListener(View.OnClickListener onClickListener);
 
     public void createAndBind(ViewGroup parent);
+
 }

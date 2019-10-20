@@ -1,18 +1,19 @@
 package com.yuan.myapplication.mvp.view.impl;
 
-public abstract class MvpBaseLceView<M> implements MvpLceView<M> {
+public abstract class MvpBaseLceView<M> implements MvpLceView<M>{
+
     @Override
     public void showLoading(boolean pullToRefresh) {
 
     }
 
     @Override
-    public void showConter() {
+    public void showContent() {
 
     }
 
     @Override
-    public void shouwError(Exception e, boolean pullToRefresh) {
+    public void showError(Exception e, boolean pullToRefresh) {
 
     }
 

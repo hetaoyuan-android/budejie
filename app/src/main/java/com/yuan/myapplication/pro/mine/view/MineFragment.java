@@ -1,14 +1,18 @@
 package com.yuan.myapplication.pro.mine.view;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.yuan.myapplication.R;
 import com.yuan.myapplication.pro.base.view.BaseFragment;
+import com.yuan.myapplication.pro.base.view.item.DefaultItemBuilder;
 import com.yuan.myapplication.pro.mine.view.navigation.MineNavigationBuilder;
 import com.yuan.myapplication.utils.ToastUtil;
 
 public class MineFragment extends BaseFragment {
+
+
     @Override
     public int getContentView() {
         return R.layout.fragment_mine;
@@ -17,6 +21,7 @@ public class MineFragment extends BaseFragment {
     @Override
     public void initContentView(View viewContent) {
         initToolBar(viewContent);
+        initItem(viewContent);
     }
 
     private void initToolBar(View viewContent){
@@ -26,7 +31,7 @@ public class MineFragment extends BaseFragment {
                 .setModelOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ToastUtil.showToast(getContext(),"点击了setModelRes");
+
                     }
                 })
                 .setTitle(R.string.main_mine_title_text)
@@ -38,6 +43,21 @@ public class MineFragment extends BaseFragment {
                     }
                 });
         builder.createAndBind((ViewGroup) viewContent);
+    }
+
+
+    private void initItem(View viewContent){
+        DefaultItemBuilder builder = new DefaultItemBuilder(getContext());
+        builder.setLeftIcon(R.drawable.login_unlogin_header)
+                .setLeftText(R.string.login_login_text)
+                .setRightIcon(R.drawable.item_jiantou)
+                .setOnItemClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getActivity(),LoginActivity.class));
+                    }
+                });
+        builder.buildAndBind((ViewGroup) viewContent);
     }
 
 }

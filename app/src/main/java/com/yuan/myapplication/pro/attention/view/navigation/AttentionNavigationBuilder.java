@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.yuan.myapplication.R;
 import com.yuan.myapplication.pro.base.view.navigation.NavigationBuilderAdapter;
 
+
 public class AttentionNavigationBuilder extends NavigationBuilderAdapter {
 
     private ViewPager viewPager;

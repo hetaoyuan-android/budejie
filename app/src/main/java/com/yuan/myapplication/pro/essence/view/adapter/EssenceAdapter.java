@@ -9,6 +9,7 @@ import com.yuan.myapplication.pro.essence.view.EssenceVideoFragment;
 
 import java.util.List;
 
+
 public class EssenceAdapter extends FragmentStatePagerAdapter {
 
     public static final String TAB_TAG = "@dream@";

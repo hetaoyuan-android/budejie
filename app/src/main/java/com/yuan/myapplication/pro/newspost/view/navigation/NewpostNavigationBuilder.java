@@ -6,10 +6,6 @@ import android.view.ViewGroup;
 import com.yuan.myapplication.R;
 import com.yuan.myapplication.pro.base.view.navigation.NavigationBuilderAdapter;
 
-
-/**
- * Created by Dream on 16/5/27.
- */
 public class NewpostNavigationBuilder extends NavigationBuilderAdapter {
 
     public NewpostNavigationBuilder(Context context){

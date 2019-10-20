@@ -1,9 +1,10 @@
 package com.yuan.myapplication.mvp.presenter.impl;
 
+
 import com.yuan.myapplication.mvp.presenter.MvpPresenter;
 import com.yuan.myapplication.mvp.view.MvpView;
 
-public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
+public abstract class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     private V view;
 
@@ -14,7 +15,7 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     @Override
     public void detachView() {
-        if (view != null) {
+        if (view !=null){
             view = null;
         }
     }
