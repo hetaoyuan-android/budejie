@@ -65,9 +65,11 @@ public class LoginActivity extends BaseActivtiy implements View.OnClickListener{
             @Override
             public void onResult(UserBean result) {
                 if (result == null){
-                    ToastUtil.showToast(LoginActivity.this,"登录失败!");
-                }else {
+                    ToastUtil.showToast(LoginActivity.this,"暂无相关登录信息!");
+                }else if (result.getContent().equals("success")){
                     ToastUtil.showToast(LoginActivity.this,"登录成功!");
+                } else if (result.getContent().equals("fail")) {
+                    ToastUtil.showToast(LoginActivity.this,"登录失败!");
                 }
             }
         });

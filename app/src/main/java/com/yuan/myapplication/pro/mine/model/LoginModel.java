@@ -7,6 +7,7 @@ import com.yuan.myapplication.http.impl.SystemHttpCommand;
 import com.yuan.myapplication.http.utils.HttpTask;
 import com.yuan.myapplication.http.utils.HttpUtils;
 import com.yuan.myapplication.pro.base.model.BaseModel;
+import com.yuan.myapplication.utils.CommonPropertyUtils;
 
 public class LoginModel extends BaseModel {
     public LoginModel(Context context) {
@@ -17,7 +18,7 @@ public class LoginModel extends BaseModel {
         RequestParam requestParam = new RequestParam();
         requestParam.put("username",username);
         requestParam.put("password",password);
-        HttpTask httpTask = new HttpTask("http://192.168.57.1:8080/Dream/LoginServlet",requestParam,new SystemHttpCommand(),onHttpResultListener);
+        HttpTask httpTask = new HttpTask(CommonPropertyUtils.BASE_NETWORK_URL + "login",requestParam,new SystemHttpCommand(),onHttpResultListener);
         httpTask.execute();
     }
 

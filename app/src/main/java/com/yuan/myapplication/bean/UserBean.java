@@ -15,6 +15,16 @@ public class UserBean {
         this.content = content;
     }
 
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", sex='" + sex + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
+
     public String getUsername() {
         return username;
     }
