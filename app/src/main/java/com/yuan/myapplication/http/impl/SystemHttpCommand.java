@@ -18,4 +18,14 @@ public class SystemHttpCommand implements IHttpCommand<HashMap<String,Object>> {
             return null;
         }
     }
+
+    @Override
+    public String executeGet(String url) {
+        try {
+            return HttpUtils.get(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
