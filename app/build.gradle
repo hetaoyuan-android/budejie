@@ -32,4 +32,8 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation files('libs/gson-2.2.4.jar')
     implementation 'com.huxq17.xrefreshview:xrefreshview:2.1.9'
+
+    // butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
