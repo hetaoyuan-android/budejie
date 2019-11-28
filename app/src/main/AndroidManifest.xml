@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".pro.mine.view.list.option.tab_layout.TableLayoutViewPager"></activity>
+        <activity android:name=".GuideActivity"></activity>
+        <activity android:name=".pro.mine.view.list.option.tab_layout.TableLayoutViewPager" />
         <activity android:name=".pro.mine.view.list.option.ListOptionActivity" />
         <activity android:name=".LaunchActivity">
             <intent-filter>

@@ -54,7 +54,7 @@ public class LaunchActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 startActivity(new Intent(LaunchActivity.this,
-                        MainActivity.class));
+                        GuideActivity.class));
                 finish();
             }
         });
